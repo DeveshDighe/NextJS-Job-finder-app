@@ -39,7 +39,7 @@ export default function Navbar() {
     Cookies.remove('MyToken');
     dispatch({ type: 'REMOVE_USER' });
     dispatchR(removeUserJobApplication())
-    dispatchR(removeJobs())
+    // dispatchR(removeJobs())
     navigate.push('/')
   };
 
