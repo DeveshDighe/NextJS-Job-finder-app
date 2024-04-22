@@ -12,7 +12,7 @@ const prodBaseUrl = 'https://nextjs-online-learn-app.vercel.app/';
 
 
 // Determine base URL based on environment
-const BASE_URL = NODE_ENV === 'productiohn' ? prodBaseUrl : devBaseUrl;
+const BASE_URL = NODE_ENV === 'produactiohn' ? prodBaseUrl : devBaseUrl;
 
 export const api = axios.create({
   baseURL: BASE_URL,

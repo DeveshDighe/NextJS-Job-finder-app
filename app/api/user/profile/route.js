@@ -4,8 +4,9 @@ import { NextResponse } from 'next/server';
 
 export async function  GET(req) {
   try {
-    const token = req.headers.get('authorization').split(' ')[1];
-    console.log(token, 'authorizationHeaderValue');
+    const token =await req.headers ? req.headers.get('authorization').split(' ')[1] : null;
+
+    console.log(token , 'TOKENTOKENTOKEN');
     const GrossToken = await jwt.verify(token , process.env.SECRET_KEY)
     console.log(GrossToken , 'GrossToken');
     const userId = GrossToken.id
@@ -14,6 +15,6 @@ export async function  GET(req) {
 
     return NextResponse.json({success : true, user} ,{status : 200})
   } catch (error) {
-    NextResponse.json({ error: error.message } , {status : 400});
+    return NextResponse.json({ error: error.message } , {status : 400});
   }
 }

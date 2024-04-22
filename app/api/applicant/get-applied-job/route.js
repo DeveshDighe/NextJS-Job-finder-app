@@ -6,11 +6,13 @@ import { connectDB } from "@/BackendLogic/DbConfig";
 
 
 export async function GET(req) {
-  connectDB()
   try {
-    const token = req.headers.get('authorization').split(' ')[1];
+    const token =await req.headers ? req.headers.get('authorization').split(' ')[1] : null;
+
+    console.log(token , 'TOKENTOKENTOKEN');
     const GrossToken = await jwt.verify(token , process.env.SECRET_KEY)
     console.log(GrossToken , 'GrossToken');
+    await connectDB()
     const userId = GrossToken.id
     console.log(userId, 'This is useId');
     const allAplliedData =await Jobapplication.find({user : userId}).populate('user')
