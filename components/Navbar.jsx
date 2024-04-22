@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { MyContext } from '@/FrontEndLogic/Context/AuthContext';
 import { removeUserJobApplication } from '@/FrontEndLogic/ReduxToolkit/reducers/userJobAplliedApp';
-import { removeJobs } from '@/FrontEndLogic/ReduxToolkit/reducers/JobsReducer';
+import { addJobs, removeJobs } from '@/FrontEndLogic/ReduxToolkit/reducers/JobsReducer';
 import { api } from '@/FrontEndLogic/Configer/config';
 import Cookies from 'js-cookie';
 
@@ -45,8 +45,7 @@ export default function Navbar() {
 
   const getJobs =async () =>{
     try {
-      console.log('Hit getJob');
-      const response = await api.get('admin/get-job')
+      const response = await api.get('api/admin/get-job')
       dispatchR(addJobs(response.data.allJobs))
     } catch (error) {
       
@@ -66,7 +65,7 @@ export default function Navbar() {
 
   useEffect(() => {
     getUser();
-    // getJobs()
+    getJobs()
   }, [])
 
   return (
@@ -87,10 +86,10 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex flex-shrink-0 items-center ">
                   <img
-                    className="h-8 w-auto"
-                    src="https://www.freeiconspng.com/uploads/yellow-lightning-bolt-clipart-30.png"
+                    className="h-8 w-auto rounded-3xl"
+                    src="https://media.istockphoto.com/id/1212437517/vector/lightning-bolt-thunder-bolt-lighting-strike-expertise-flat-vector-icon.jpg?s=612x612&w=0&k=20&c=Pc3HyHPRWeBxzB_bvjDZiQ3vWuRoNwPqmVdMhCxT2ts="
                     alt="Your Company"
                   />
                 </div>
