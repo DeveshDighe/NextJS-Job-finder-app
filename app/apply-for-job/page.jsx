@@ -31,20 +31,19 @@ const ApplyJobForm = () => {
 
     const applicantData = { jobCategory, jobTypes, skillsHave, educationHave, experienceHave, applicantVision, salaryExpectation };
 
-    // Do something with the form data, like submitting it to a backend
-    console.log({
-      jobCategory,
-      jobTypes,
-      skillsHave,
-      educationHave,
-      experienceHave,
-      applicantVision,
-      salaryExpectation
-    });
+    // // Do something with the form data, like submitting it to a backend
+    // console.log({
+    //   jobCategory,
+    //   jobTypes,
+    //   skillsHave,
+    //   educationHave,
+    //   experienceHave,
+    //   applicantVision,
+    //   salaryExpectation
+    // });
 
     try {
       const response = await api.post('api/applicant/apply-job', applicantData);
-      console.log(response, 'response');
       if (response.data.success) {
         toast.success(response.data.msg)
         navigate('/')

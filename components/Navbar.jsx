@@ -48,7 +48,6 @@ export default function Navbar() {
       console.log('Hit getJob');
       const response = await api.get('admin/get-job')
       dispatchR(addJobs(response.data.allJobs))
-      console.log(response);
     } catch (error) {
       
     }
@@ -56,9 +55,7 @@ export default function Navbar() {
 
   const getUser =async () => {
     try {
-      console.log('Hir kaka');
       const response = await api.get('api/user/profile')
-      console.log(response , 'responce peofile');
       if (response.data.success) {
         dispatch({type : "ADD_USER" , payload : response.data.user})
       }
@@ -141,7 +138,7 @@ export default function Navbar() {
                         {({ active }) => (
                           <p
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-default')}
                           >
                             Your Profile
                           </p>
@@ -153,7 +150,7 @@ export default function Navbar() {
                             <p
                               onClick={handleLogout}
                               href="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
                             >
                               Logout
                             </p>
@@ -165,7 +162,7 @@ export default function Navbar() {
                             <p
                               onClick={() => navigate.push('/login')}
                               href="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
                             >
                               LogIn
                             </p>

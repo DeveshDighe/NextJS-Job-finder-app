@@ -4,7 +4,7 @@ const createJob = async (allJobData) =>{
   try {
     const {jobCategory, jobTypes, jobDescription, companyName, companyStartedIn, companyVision, skillsRequired, educationRequired, experienceRequired } = allJobData;
 
-    console.log(jobCategory, jobTypes, jobDescription, companyName, companyStartedIn, companyVision, skillsRequired, educationRequired, experienceRequired);
+    // console.log(jobCategory, jobTypes, jobDescription, companyName, companyStartedIn, companyVision, skillsRequired, educationRequired, experienceRequired);
 
     const createdJob = await Jobs({
       jobCategory,
@@ -20,7 +20,6 @@ const createJob = async (allJobData) =>{
     if (!createdJob) {
       throw new Error('Error in job creation')
     }
-    console.log(createdJob, 'createdJOb');
     createdJob.save()
     return createdJob
   } catch (error) {

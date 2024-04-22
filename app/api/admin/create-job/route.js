@@ -11,7 +11,6 @@ export async function POST(req){
 
     return NextResponse.json({msg: 'job created', success : true, createdJob : NewJob},{status :200})
   } catch (error) {
-    console.log(error , 'This is error');
     return NextResponse.json({msg : 'Error in Job creation' , success : false},{status :400})
   }
 }

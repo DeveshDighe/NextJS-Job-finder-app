@@ -35,22 +35,21 @@ const JobCreationForm = () => {
 
     const allJobData = {jobCategory, jobTypes, jobDescription, companyName, companyStartedIn, companyVision, skillsRequired, educationRequired, experienceRequired}
 
-    // Do something with the form data, like submitting it to a backend
-    console.log({
-      jobCategory,
-      jobTypes,
-      jobDescription,
-      companyName,
-      companyStartedIn,
-      companyVision,
-      skillsRequired,
-      educationRequired,
-      experienceRequired,
-    });
+    // // Do something with the form data, like submitting it to a backend
+    // console.log({
+    //   jobCategory,
+    //   jobTypes,
+    //   jobDescription,
+    //   companyName,
+    //   companyStartedIn,
+    //   companyVision,
+    //   skillsRequired,
+    //   educationRequired,
+    //   experienceRequired,
+    // });
 
     try {
       const response = await api.post('api/admin/create-job',allJobData )
-      console.log(response , 'response');
       if (response.data.success) {
         toast.success(response.data.msg)
         navigate.push('/')

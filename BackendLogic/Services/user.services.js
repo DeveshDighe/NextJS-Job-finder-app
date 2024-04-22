@@ -5,7 +5,6 @@ import bcrypt from 'bcrypt'
 const createUser = async (userData) => {
   try {
     const { name, email, password } = userData;
-    console.log(name, email, password);
 
     const isUserExist = await User.findOne({ email });
 
@@ -34,23 +33,21 @@ const createUser = async (userData) => {
 const getUser =async (userData) =>{
   try {
     const {password , email} = userData;
-    console.log(userData);
+
 
     const user = await User.findOne({email})
     if (!user) {
       throw new Error('Email do not exist')
     }
-    console.log('a', password , 'b', user.password);
+
     const isPasswordCorrect = await bcrypt.compare(password , user.password)
-    console.log('b',isPasswordCorrect);
     if (!isPasswordCorrect) {
       throw new Error('Password is incorrect')
     }
-    console.log('11111');
+
     return user
 
   } catch (error) {
-    console.log(error , 'errrrr');
     throw error;
 
   }

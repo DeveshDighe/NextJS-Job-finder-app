@@ -5,7 +5,6 @@ import nodemailer from 'nodemailer'
 
 export async function POST(req){
   try {
-    console.log('ddddFFFF');
     const {useremail} =await req.json();
 
     const randomNumber = Math.floor(1000 + Math.random() * 9000);
@@ -14,7 +13,6 @@ export async function POST(req){
       email : useremail,
       otpNumber : randomNumber
     })
-    console.log('1');
 
     createdOtp.save()
 
@@ -25,7 +23,6 @@ export async function POST(req){
         pass : process.env.ADMINPASS,
       }
     })
-    console.log('11');
 
     const mailOptions = {
       from : process.env.ADMINEMAIL,
@@ -34,7 +31,6 @@ export async function POST(req){
       html: `<p style="font-size: medium;">Enter This <span style="color: blue;">${randomNumber}</span> in otp field of reset password</p>`
     }
 
-    console.log('2');
     
     trasporter.sendMail(mailOptions).then(()=>{
       console.log('Mail successfully send');

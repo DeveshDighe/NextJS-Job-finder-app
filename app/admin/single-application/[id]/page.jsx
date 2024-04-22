@@ -8,7 +8,6 @@ import { api } from '@/FrontEndLogic/Configer/config';
 
 const SingleApplication = () => {
   const { id } = useParams();
-  console.log('This is id', id);
   const [singleApplication, setSingleApplication] = useState(null);
   const [rejectReason, setRejectReason] = useState('');
   const [rejectClicked, setRejectClicked] = useState(false);
@@ -17,7 +16,6 @@ const SingleApplication = () => {
   const getSingleApplication = async () => {
     try {
       const response = await api.post('api/admin/single-application', { id });
-      console.log(response.data, 'response admin');
       setSingleApplication(response.data.singleAppication);
     } catch (error) {
       console.error('Error fetching single application:', error);
@@ -27,7 +25,6 @@ const SingleApplication = () => {
   const handleReject = async () => {
     const rejetctData = { id, rejectReason : reasonInputRef.current.value }
     try {
-      console.log(rejectReason , 'rejectreason');
       const response = await api.patch('api/admin/application-reject',rejetctData );
       if (response.data.success) {
         toast.success('Application rejected');
@@ -35,7 +32,6 @@ const SingleApplication = () => {
         setRejectClicked(false); // Reset rejectClicked state
         setRejectReason(''); // Reset rejectReason state
       }
-      console.log(response.data, 'reject-response');
     } catch (error) {
       console.error('Error rejecting application:', error);
     }
@@ -44,7 +40,6 @@ const SingleApplication = () => {
   const handleAccept = async () => {
     try {
       const response = await api.patch('api/admin/application-accept', { id });
-      console.log(response.data, 'accept-response');
       if (response.data.success) {
         toast.success('Application Accepted');
         setSingleApplication(response.data.appication);
@@ -65,7 +60,6 @@ const SingleApplication = () => {
   const handleRejectFormSubmit = (event) => {
     event.preventDefault();
     // Handle the submission of reject reason
-    console.log(reasonInputRef.current.value);
     setRejectReason(reasonInputRef.current.value);
     handleReject(); // Call the reject handler
   };

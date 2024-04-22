@@ -11,10 +11,8 @@ const JobsMapped = () => {
 
   const getJobs = async () => {
     try {
-      console.log('Hit getJob');
       const response = await api.get('api/get-job');
       dispatchR(addJobs(response.data.allJobs));
-      console.log(response);
     } catch (error) {
       console.error('Error fetching jobs:', error);
     }

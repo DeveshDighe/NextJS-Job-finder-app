@@ -23,10 +23,10 @@ function RegisterForm() {
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
 
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
+    // console.log('Name:', name);
+    // console.log('Email:', email);
+    // console.log('Password:', password);
+    // console.log('Confirm Password:', confirmPassword);
 
     const userData = {name , email, password}
 
@@ -36,9 +36,7 @@ function RegisterForm() {
 
     try {
       const responce = await api.post('api/user/register', userData)
-      console.log(responce , 'resiter responce');
       if (responce.data.success) {
-        console.log(responce , 'responce');
         toast.success(responce.data.msg)
         navigate.push('/login')
       }

@@ -28,9 +28,7 @@ const Forgotpassword = () => {
           toast.success(response.data.msg);
           setFieldNumber(2);
         }
-        console.log(response, 'response');
       } catch (error) {
-        console.log(error);
         toast.error(error.response.data.error)
       }
     }
@@ -45,10 +43,8 @@ const Forgotpassword = () => {
           toast.success(response.data.msg);
           setFieldNumber(3);
         }
-        console.log(response, 'response');
       } catch (error) {
         toast.error(error.response.data.error)
-        console.log(error);
       }
     }
 
@@ -64,10 +60,9 @@ const Forgotpassword = () => {
           setFieldNumber(1);
           navigate.push('/login');
         }
-        console.log(response, 'response');
       } catch (error) {
         toast.error(error.response.data.error)
-        console.log(error);
+
       }
     }
   };

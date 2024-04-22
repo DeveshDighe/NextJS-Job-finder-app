@@ -22,12 +22,11 @@ function LoginForm() {
 
     const userData = {password , email}
 
-    console.log('Email:', email);
-    console.log('Password:', password);
+
 
     try {
       const response = await api.post('api/user/login', userData)
-      console.log(response , 'responce');
+
       if (response.data.success) {
         toast.success(response.data.msg)
         // localStorage.setItem('MyToken',response.data.token)
@@ -36,7 +35,7 @@ function LoginForm() {
         navigate.push('/')
       }
     } catch (error) {
-      console.log(error , 'iiii');
+
       toast.error(error.response.data.error)
       // console.log(error.response.data.error);
     }

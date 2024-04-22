@@ -15,10 +15,8 @@ const RefreshProvider = () => {
 
   const getJobs =async () =>{
     try {
-      console.log('Hit getJob');
       const response = await api.get('admin/get-job')
       dispatchR(addJobs(response.data.allJobs))
-      console.log(response);
     } catch (error) {
       
     }
@@ -27,12 +25,10 @@ const RefreshProvider = () => {
   const getUser =async () => {
     try {
       const response = await api.get('apiuser/profile')
-      console.log(response , 'responce');
       if (response.data.success) {
         dispatch({type : "ADD_USER" , payload : response.data.user})
       }
     } catch (error) {
-      console.log(error.response.data.error);
     }
   }
 

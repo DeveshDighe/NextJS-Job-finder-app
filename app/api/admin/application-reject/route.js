@@ -12,7 +12,6 @@ export async function PATCH(req) {
     // const userId = GrossToken.id
     // const user =await getUserWithToken(userId)
 
-    console.log(id , rejectReason);
 
     const appication = await Jobapplication.findById(id).populate('user')
 
@@ -26,7 +25,6 @@ export async function PATCH(req) {
         pass : process.env.ADMINPASS,
       }
     })
-    console.log('11');
 
     const mailOptions = {
       from: process.env.ADMINEMAIL,
@@ -41,7 +39,6 @@ export async function PATCH(req) {
     };
     
 
-    console.log('2');
     
     trasporter.sendMail(mailOptions).then(()=>{
       console.log('Mail successfully send');

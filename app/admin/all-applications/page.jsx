@@ -12,13 +12,12 @@ const GetAllJobApplication = () => {
   const AllApplications = useSelector((state) => state.allJobApplication.AllApplications);
   const dispatchR = useDispatch();
 
-  console.log(AllApplications, 'JobAppaLL');
   const navigate = useRouter()
 
   const getAppliedJobs = async () => {
     try {
       const response = await api.get('api/admin/all-applications');
-      console.log(response.data.allAplliedData, 'appliedJobData all USERS');
+
       dispatchR(addJobApplication(response.data.allAplliedData));
     } catch (error) {
       console.log(error);

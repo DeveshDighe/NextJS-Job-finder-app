@@ -13,7 +13,6 @@ const AppliedJob = () => {
   const getAppliedJobs = async () => {
     try {
       const response = await api.get('/api/applicant/get-applied-job');
-      console.log(response.data.allAplliedData, 'appliedJobData');
       dispatchR(addUserJobApplication(response.data.allAplliedData));
     } catch (error) {
       console.log(error);

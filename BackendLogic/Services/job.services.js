@@ -6,7 +6,6 @@ import nodemailer from 'nodemailer'
 
 const getAllJobs = async () => {
   try {
-    console.log('alalalal');
     const allJobs = await Jobs.find()
     return allJobs
 
@@ -16,7 +15,6 @@ const getAllJobs = async () => {
 }
 
 const createApplication = async (userId, reqData) => {
-  console.log(userId, reqData, 'userId', 'ReqData');
   try {
     const { jobCategory, jobTypes, skillsHave, educationHave, experienceHave, applicantVision, salaryExpectation } = reqData;
 
@@ -99,7 +97,6 @@ const createApplication = async (userId, reqData) => {
     return createdJobApplication;
 
   } catch (error) {
-    console.log(error);
     throw new Error('Error in creating jobApplication');
   }
 };
