@@ -1,9 +1,11 @@
+import { connectDB } from "@/BackendLogic/DbConfig";
 import { getUser } from "@/BackendLogic/Services/user.services";
 import jwt from 'jsonwebtoken'
 import { NextResponse } from "next/server";
 
 
 export async function POST(req) {
+  connectDB()
   try {
     const userData =await req.json()
 

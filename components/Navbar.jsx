@@ -45,7 +45,7 @@ export default function Navbar() {
 
   const getJobs =async () =>{
     try {
-      const response = await api.get('api/admin/get-job')
+      const response = await api.get('api/get-job')
       dispatchR(addJobs(response.data.allJobs))
     } catch (error) {
       
@@ -163,7 +163,7 @@ export default function Navbar() {
                               href="#"
                               className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
                             >
-                              LogIn
+                              Login
                             </p>
                           )}
                         </Menu.Item>
