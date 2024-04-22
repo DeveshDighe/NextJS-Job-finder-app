@@ -8,7 +8,7 @@ const NODE_ENV = 'production'
 
 // Define base URLs for development and production
 const devBaseUrl = 'http://localhost:3000/';
-const prodBaseUrl = 'https://next-js-job-finder-app.vercel.app/';
+const prodBaseUrl = 'https://job-finder-app-nextjs.vercel.app/';
 
 
 

@@ -7,7 +7,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(res){
   await connectDB()
-  console.log('ssss');
     try {
       const allJobs = await getAllJobs()
       // console.log(allJobs, 'allllll');
