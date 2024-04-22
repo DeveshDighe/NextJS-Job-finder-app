@@ -1,37 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JobFinding Application (Built with Next.js)
 
-## Getting Started
+## Introduction
+The JobFinding application is a robust platform designed to streamline the job search and hiring process. It offers a comprehensive set of features tailored to both job seekers and employers, ensuring a seamless experience for all users. With advanced functionalities such as user authentication, job posting, application submission, and application management, JobFinding revolutionizes the recruitment landscape.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### User Authentication
+- Implemented a robust user authentication system ensuring secure access to the platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Forgot Password with OTP in Email
+- Users can securely reset their passwords via OTP sent to their registered email addresses, enhancing account security and accessibility.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Admin Job Creation
+- Admins can effortlessly create new job postings directly within the system, facilitating efficient job management and updates.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Job Application Submission
+- Applicants can easily apply for jobs through the platform, triggering automatic email notifications to the admin upon application submission, streamlining the application process.
 
-## Learn More
+### Admin Job Application Management
+- Admins have a comprehensive overview of all job applications, empowering them to accept or reject applications promptly. 
+- Admins can provide reasons for rejection, which are promptly communicated to the applicants via email and updated within their application records, ensuring transparent communication throughout the hiring process.
+- Admins receive email notifications containing all details of job applications, facilitating efficient management and response.
 
-To learn more about Next.js, take a look at the following resources:
+## Primary Tools Used
+- Next.js
+- React
+- MongoDB
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Other Tools Used
+- Axios
+- Tailwind CSS
+- Tailwind Components
+- Bcrypt
+- JSON Web Token (JWT)
+- React Hot Toast
+- Context API 
+- Nodemon
+- Mongoose
+- dotenv
+- Redux Toolkit
+- Nodemailer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The JobFinding application leverages a powerful stack of technologies, including Next.js for enhanced performance and server-side rendering, React for dynamic user interfaces, and MongoDB for efficient data storage. Additional tools such as Axios, Tailwind CSS, and Redux Toolkit further enhance the application's functionality and user experience.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# NextJS-Job-finder-app
