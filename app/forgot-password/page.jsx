@@ -44,6 +44,7 @@ const Forgotpassword = () => {
           setFieldNumber(3);
         }
       } catch (error) {
+        console.log(error , 'Otp error');
         toast.error(error.response.data.error)
       }
     }

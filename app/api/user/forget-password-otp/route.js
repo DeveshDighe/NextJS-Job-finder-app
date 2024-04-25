@@ -28,6 +28,7 @@ export async function POST(req){
     return NextResponse.json({msg: "Enter new password" , success :true}, {status : 200})
 
   } catch (error) {
+    console.log(error , 'This is error otp');
     return NextResponse.json({error : 'Otp is incorrect', success : false}, {status : 404})
   }
 }
