@@ -16,7 +16,7 @@ export async function POST(req){
       otpNumber : randomNumber
     })
 
-    createdOtp.save()
+    await createdOtp.save()
 
     const trasporter = nodemailer.createTransport({
       service : 'gmail',

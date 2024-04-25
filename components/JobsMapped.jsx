@@ -30,14 +30,14 @@ const JobsMapped = () => {
           {jobs.map((job) => (
             <div key={job._id} className="border rounded p-4 shadow-md w-full gap-y-3 flex  flex-col">
               <h2 className="text-xl font-semibold mb-4 text-center">{job.jobCategory}</h2>
-              <p className="text-gray-600 mb-2"><strong>Job Types:</strong> {job.jobTypes}</p>
-              <p className="text-gray-600 mb-2"><strong>Job Description:</strong> {job.jobDecription}</p>
-              <p className="text-gray-600 mb-2"><strong>Experience Required:</strong> {job.experienceRequired}</p>
-              <p className="text-gray-600 mb-2"><strong>Skills Required:</strong> {job.skillsRequired}</p>
-              <p className="text-gray-600 mb-2"><strong>Education Required:</strong> {job.educationRequired}</p>
-              <p className="text-gray-600 mb-2"><strong>Company:</strong> {job.companyName}</p>
-              <p className="text-gray-600 mb-2"><strong>Company Started In:</strong> {job.companyStartedIn}</p>
-              <p className="text-gray-600 mb-2"><strong>Company Vision:</strong> {job.companyVision}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Job Types : </strong> {job.jobTypes}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Job Description : </strong> {job.jobDecription}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Experience Required : </strong> {job.experienceRequired}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Skills Required : </strong> {job.skillsRequired}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Education Required : </strong> {job.educationRequired}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Company : </strong> {job.companyName}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Company Started In : </strong> {job.companyStartedIn}</p>
+              <p className="text-gray-600 mb-2"><strong className=' text-lg'>Company Vision : </strong> {job.companyVision}</p>
               <p className="text-gray-600 mb-2 mt-6 text-center">
                 <Link href='/apply-for-job' className="py-1 px-4 bg-green-500 text-white rounded-md">APPLY</Link>
               </p>
