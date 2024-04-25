@@ -1,8 +1,10 @@
+import { connectDB } from "@/BackendLogic/DbConfig";
 import User from "@/BackendLogic/models/user.model";
 import bcrypt from 'bcrypt'
 import { NextResponse } from "next/server";
 
 export async function POST(req){
+  connectDB()
 
   try {
     const {useremail , userpassword} =await req.json();

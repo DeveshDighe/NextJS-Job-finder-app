@@ -1,8 +1,10 @@
+import { connectDB } from "@/BackendLogic/DbConfig";
 import Jobapplication from "@/BackendLogic/models/application.model";
 import { NextResponse } from "next/server";
 import nodemailer from 'nodemailer'
 
 export async function PATCH(req) {
+  connectDB()
   try {
     const {id , rejectReason} =await req.json();
 

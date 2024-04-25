@@ -1,7 +1,9 @@
+import { connectDB } from "@/BackendLogic/DbConfig";
 import Jobapplication from "@/BackendLogic/models/application.model";
 import { NextResponse } from "next/server";
 
 export async function PATCH(req){
+  connectDB()
   try {
     const {id } =await req.json();
 

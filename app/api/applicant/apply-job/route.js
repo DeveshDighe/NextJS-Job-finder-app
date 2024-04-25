@@ -1,8 +1,10 @@
 import { createApplication } from "@/BackendLogic/Services/job.services";
 import { NextResponse } from "next/server";
 import jwt from 'jsonwebtoken'
+import { connectDB } from "@/BackendLogic/DbConfig";
 
 export async function POST(req){
+  connectDB()
   try {
     const applicationData = await req.json()
     const token =await req.headers ? req.headers.get('authorization').split(' ')[1] : null;

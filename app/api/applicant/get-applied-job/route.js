@@ -6,6 +6,7 @@ import { connectDB } from "@/BackendLogic/DbConfig";
 
 
 export async function GET(req) {
+  connectDB()
   try {
     const token =await req.headers ? req.headers.get('authorization').split(' ')[1] : null;
 
