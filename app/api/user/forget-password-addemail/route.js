@@ -1,9 +1,11 @@
 const { default: OTP } = require("@/BackendLogic/models/otp.model");
+import { connectDB } from '@/BackendLogic/DbConfig';
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer'
 
 
 export async function POST(req){
+  connectDB()
   try {
     const {useremail} =await req.json();
 
