@@ -49,7 +49,7 @@ const ApplyJobForm = () => {
         navigate('/')
       }
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error?.response?.data?.message);
     }
   };
 

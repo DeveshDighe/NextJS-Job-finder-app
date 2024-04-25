@@ -38,9 +38,11 @@ export async function POST(req){
     .catch((err)=>{
       console.log('Error', err);
     })
+    console.log('Generated email', mailOptions);
 
     return NextResponse.json({msg: 'OTP sent on email', success : true}, {status : 200})
   } catch (error) {
+    console.log(error, 'This is forget pass error');
     return NextResponse.json({msg: "Email can not send", success : false}, {status : 400})
   }
 }
