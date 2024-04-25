@@ -16,7 +16,7 @@ const getAllJobs = async () => {
 
 const createApplication = async (userId, reqData) => {
   try {
-    const { jobCategory, jobTypes, skillsHave, educationHave, experienceHave, applicantVision, salaryExpectation } = reqData;
+    const { jobCategory, jobTypes, skillsHave, educationHave, experienceHave, applicantVision, salaryExpectation } =await reqData;
 
     // Find the user by userId
     const user = await User.findById(userId);
@@ -49,7 +49,7 @@ const createApplication = async (userId, reqData) => {
 
 
     // Create a transporter for sending email
-    const transporter = nodemailer.createTransport({
+    const transporter =await nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: user.email,
