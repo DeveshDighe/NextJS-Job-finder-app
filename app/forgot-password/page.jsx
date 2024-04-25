@@ -39,6 +39,7 @@ const Forgotpassword = () => {
       const useremail = email.current.value;
       try {
         const response = await api.post('api/user/forget-password-otp', { useremail, userotp });
+        console.log(response , 'This is responce otp');
         if (response.data.success) {
           toast.success(response.data.msg);
           setFieldNumber(3);
@@ -55,6 +56,7 @@ const Forgotpassword = () => {
 
       try {
         const response = await api.post('api/user/update-password', { useremail, userpassword });
+
         if (response.data.success) {
           toast.success(response.data.msg);
           setFieldNumber(1);
