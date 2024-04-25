@@ -1,3 +1,4 @@
+import { connectDB } from "@/BackendLogic/DbConfig";
 import OTP from "@/BackendLogic/models/otp.model";
 import User from "@/BackendLogic/models/user.model";
 import { NextResponse } from "next/server";
