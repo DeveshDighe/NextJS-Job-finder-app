@@ -76,17 +76,17 @@ const createApplication = async (userId, reqData) => {
 `;
 
 
-    // Configure mail options
+
     const mailOptions = {
       from: process.env.EMAIL,
-      to: 'deveshdighe7d@gmail.com', // Replace with recipient email address
+      to: 'deveshdighe7d@gmail.com',
       subject: "Job Application",
       html: htmlTemplate
     };
 
 
     // Send email
-    transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
       .then(() => {
         console.log('Mail successfully sent');
       })

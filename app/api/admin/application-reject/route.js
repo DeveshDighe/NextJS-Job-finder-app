@@ -40,7 +40,7 @@ export async function PATCH(req) {
     
 
     
-    trasporter.sendMail(mailOptions).then(()=>{
+    await trasporter.sendMail(mailOptions).then(()=>{
       console.log('Mail successfully send');
     })
     .catch((err)=>{
