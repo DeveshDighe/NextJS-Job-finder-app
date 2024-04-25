@@ -23,7 +23,7 @@ export async function POST(req){
     }
    
 
-    const removeOtp = await OTP.findByIdAndDelete(isOtpCorrect._id)
+    // const removeOtp = await OTP.findByIdAndDelete(isOtpCorrect._id)
 
     return NextResponse.json({msg: "Enter new password" , success :true}, {status : 200})
 
