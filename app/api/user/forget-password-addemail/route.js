@@ -18,7 +18,7 @@ export async function POST(req){
 
     await createdOtp.save()
 
-    const trasporter = nodemailer.createTransport({
+    const trasporter =await nodemailer.createTransport({
       service : 'gmail',
       auth : {
         user : process.env.ADMINEMAIL,
