@@ -46,7 +46,7 @@ const ApplyJobForm = () => {
       const response = await api.post('api/applicant/apply-job', applicantData);
       if (response.data.success) {
         toast.success(response.data.msg)
-        navigate('/')
+        navigate.push('/')
       }
     } catch (error) {
       console.log(error?.response?.data?.message);
