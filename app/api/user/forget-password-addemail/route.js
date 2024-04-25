@@ -32,7 +32,7 @@ export async function POST(req){
     }
 
     
-    trasporter.sendMail(mailOptions).then(()=>{
+    await trasporter.sendMail(mailOptions).then(()=>{
       console.log('Mail successfully send');
     })
     .catch((err)=>{
